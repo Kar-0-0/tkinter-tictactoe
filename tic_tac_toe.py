@@ -1,4 +1,5 @@
 import tkinter as tk
+from itertools import cycle
 from tkinter import messagebox
 
 from PIL import Image, ImageTk
@@ -13,7 +14,7 @@ def place_marker1(*args):
         if curr_player == "X":
             xes[x_count].place(x=0, y=0)
             occupant1.set("X")
-            curr_player == "O"
+            curr_player = "O"
             x_count += 1
         elif curr_player == "O":
             oes[o_count].place(x=0, y=0)
@@ -23,19 +24,130 @@ def place_marker1(*args):
 
 
 def place_marker2(*args):
-    global board
-    global occupant1
-    global curr_player
+    global board, occupant1, curr_player, oes, o_count, xes, x_count
 
-    if click_2:
+    if click_1:
         if curr_player == "X":
-            finalx.place(x=266.6, y=0)
-            occupant2.set("X")
-            curr_player == "O"
+            xes[x_count].place(x=266.6, y=0)
+            occupant1.set("X")
+            curr_player = "O"
+            x_count += 1
         elif curr_player == "O":
-            finalo.place(x=266.6, y=0)
-            occupant2.set("O")
+            oes[o_count].place(x=266.6, y=0)
+            occupant1.set("O")
+            o_count += 1
+            curr_player = "X"
 
+
+def place_marker3(*args):
+    global board, occupant1, curr_player, oes, o_count, xes, x_count
+
+    if click_1:
+        if curr_player == "X":
+            xes[x_count].place(x=533.2, y=0)
+            occupant1.set("X")
+            curr_player = "O"
+            x_count += 1
+        elif curr_player == "O":
+            oes[o_count].place(x=533.2, y=0)
+            occupant1.set("O")
+            o_count += 1
+            curr_player = "X"
+
+
+def place_marker4(*args):
+    global board, occupant1, curr_player, oes, o_count, xes, x_count
+
+    if click_1:
+        if curr_player == "X":
+            xes[x_count].place(x=0, y=266.6)
+            occupant1.set("X")
+            curr_player = "O"
+            x_count += 1
+        elif curr_player == "O":
+            oes[o_count].place(x=0, y=266)
+            occupant1.set("O")
+            o_count += 1
+            curr_player = "X"
+
+
+def place_marker5(*args):
+    global board, occupant1, curr_player, oes, o_count, xes, x_count
+
+    if click_1:
+        if curr_player == "X":
+            xes[x_count].place(x=266.6, y=266.6)
+            occupant1.set("X")
+            curr_player = "O"
+            x_count += 1
+        elif curr_player == "O":
+            oes[o_count].place(x=266.6, y=266.6)
+            occupant1.set("O")
+            o_count += 1
+            curr_player = "X"
+
+
+def place_marker6(*args):
+    global board, occupant1, curr_player, oes, o_count, xes, x_count
+
+    if click_1:
+        if curr_player == "X":
+            xes[x_count].place(x=533.2, y=266.6)
+            occupant1.set("X")
+            curr_player = "O"
+            x_count += 1
+        elif curr_player == "O":
+            oes[o_count].place(x=533.2, y=266.6)
+            occupant1.set("O")
+            o_count += 1
+            curr_player = "X"
+
+
+def place_marker7(*args):
+    global board, occupant1, curr_player, oes, o_count, xes, x_count
+
+    if click_1:
+        if curr_player == "X":
+            xes[x_count].place(x=0, y=533.2)
+            occupant1.set("X")
+            curr_player = "O"
+            x_count += 1
+        elif curr_player == "O":
+            oes[o_count].place(x=0, y=533.2)
+            occupant1.set("O")
+            o_count += 1
+            curr_player = "X"
+
+
+def place_marker8(*args):
+    global board, occupant1, curr_player, oes, o_count, xes, x_count
+
+    if click_1:
+        if curr_player == "X":
+            xes[x_count].place(x=266.6, y=533.2)
+            occupant1.set("X")
+            curr_player = "O"
+            x_count += 1
+        elif curr_player == "O":
+            oes[o_count].place(x=266.6, y=533.2)
+            occupant1.set("O")
+            o_count += 1
+            curr_player = "X"
+
+
+def place_marker9(*args):
+    global board, occupant1, curr_player, oes, o_count, xes, x_count
+
+    if click_1:
+        if curr_player == "X":
+            xes[x_count].place(x=533.2, y=533.2)
+            occupant1.set("X")
+            curr_player = "O"
+            x_count += 1
+        elif curr_player == "O":
+            oes[o_count].place(x=533.2, y=533.2)
+            occupant1.set("O")
+            o_count += 1
             curr_player = "X"
 
 
@@ -46,15 +158,35 @@ window.title("TicTacToe")
 
 board = tk.Canvas(window, width=800, height=800)
 board.place(x=-2, y=0)
+
 x_count = 0
-imgx = ImageTk.PhotoImage(Image.open("markers/tictacx.png"))
-finalx = tk.Label(board, image=imgx)
-xes = [finalx] * 9
+imgx1 = ImageTk.PhotoImage(Image.open("markers/tictacx1.png"))
+imgx2 = ImageTk.PhotoImage(Image.open("markers/tictacx2.png"))
+imgx3 = ImageTk.PhotoImage(Image.open("markers/tictacx3.png"))
+imgx4 = ImageTk.PhotoImage(Image.open("markers/tictacx4.png"))
+imgx5 = ImageTk.PhotoImage(Image.open("markers/tictacx5.png"))
+
+finalx1 = tk.Label(board, image=imgx1)
+finalx2 = tk.Label(board, image=imgx2)
+finalx3 = tk.Label(board, image=imgx3)
+finalx4 = tk.Label(board, image=imgx4)
+finalx5 = tk.Label(board, image=imgx5)
+
+xes = [finalx1, finalx2, finalx3, finalx4, finalx5]
 
 o_count = 0
-imgo = ImageTk.PhotoImage(Image.open("markers/tictaco.png"))
-finalo = tk.Label(board, image=imgo)
-oes = [finalo] * 9
+imgo1 = ImageTk.PhotoImage(Image.open("markers/tictaco1.png"))
+imgo2 = ImageTk.PhotoImage(Image.open("markers/tictaco2.png"))
+imgo3 = ImageTk.PhotoImage(Image.open("markers/tictaco3.png"))
+imgo4 = ImageTk.PhotoImage(Image.open("markers/tictaco4.png"))
+imgo5 = ImageTk.PhotoImage(Image.open("markers/tictaco5.png"))
+
+finalo1 = tk.Label(board, image=imgo1)
+finalo2 = tk.Label(board, image=imgo2)
+finalo3 = tk.Label(board, image=imgo3)
+finalo4 = tk.Label(board, image=imgo4)
+finalo5 = tk.Label(board, image=imgo5)
+oes = [finalo1, finalo2, finalo3, finalo4, finalo5]
 
 occupant1 = tk.StringVar()
 occupant2 = tk.StringVar()
@@ -78,8 +210,15 @@ box8 = board.create_rectangle(266.6, 533.2, 533.2, 800, fill="white", outline="b
 box9 = board.create_rectangle(533.2, 533.2, 800, 800, fill="white", outline="black")
 
 
-click_1 = True if board.tag_bind(box1, "<Button-1>", place_marker1) else False
-click_2 = True if board.tag_bind(box2, "<Button-3>", place_marker2) else False
+click_1 = board.tag_bind(box1, "<Button-1>", place_marker1)
+click_2 = board.tag_bind(box2, "<Button-1>", place_marker2)
+click_3 = board.tag_bind(box3, "<Button-1>", place_marker3)
+click_4 = board.tag_bind(box4, "<Button-1>", place_marker4)
+click_5 = board.tag_bind(box5, "<Button-1>", place_marker5)
+click_6 = board.tag_bind(box6, "<Button-1>", place_marker6)
+click_7 = board.tag_bind(box7, "<Button-1>", place_marker7)
+click_8 = board.tag_bind(box8, "<Button-1>", place_marker8)
+click_9 = board.tag_bind(box9, "<Button-1>", place_marker9)
 
 
 window.mainloop()
